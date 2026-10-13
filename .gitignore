@@ -1,2 +1,5 @@
 cars.db
 cars.db
+__pycache__/
+*.pyc
+.idea/
