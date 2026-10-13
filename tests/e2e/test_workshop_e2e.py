@@ -30,6 +30,9 @@ def test_user_edits_car_and_change_survives_reload(page, live_server):
     # 4. 保存修改
     page.get_by_role("button", name="Save changes").click()
 
+    # 等页面跳转到详情页
+    expect(page).to_have_url(re.compile(r"/cars/\d+$"))
+
     # 5. 断言详情页标题是 Honda Accord
     expect(page.get_by_role("heading", name="Honda Accord")).to_be_visible()
 
